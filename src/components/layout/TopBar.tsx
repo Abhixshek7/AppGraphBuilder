@@ -70,7 +70,7 @@ const TopBar = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 flex justify-center py-6 px-4 z-50 bg">
+      <div className="fixed top-0 left-0 right-0 flex justify-center py-4 px-4 z-50 bg">
         <div className="flex items-center justify-between px-6 py-3 bg-background rounded-2xl shadow-lg w-full max-w-3xl border border-border">
           {/* Brand */}
           <div className="flex items-center gap-2">
@@ -97,7 +97,7 @@ const TopBar = () => {
               // onClick={}
               className="rounded-full"
             >
-               <Sun className="h-5 w-5" /> 
+               <Moon className="h-5 w-5" /> 
             </Button>
 
             
