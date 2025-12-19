@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 17% 91%;
+    --foreground: 47 29% 10%;
+
+    --card: 45 17% 95%;
+    --card-foreground: 47 29% 10%;
+
+    --popover: 45 17% 95%;
+    --popover-foreground: 47 29% 10%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 10% 85%;
+    --secondary-foreground: 47 29% 10%;
+
+    --muted: 45 10% 88%;
+    --muted-foreground: 47 15% 40%;
+
+    --accent: 45 10% 82%;
+    --accent-foreground: 47 29% 10%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 45 10% 80%;
+    --input: 45 10% 80%;
+    --ring: 210 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom semantic colors */
+    --status-healthy: 160 84% 39%;
+    --status-degraded: 38 92% 50%;
+    --status-error: 0 72% 51%;
+
+    --canvas-bg: 45 17% 89%;
+    --canvas-dots: 45 10% 75%;
+
+    --panel-bg: 45 17% 93%;
+    --panel-border: 45 10% 78%;
+
+    --sidebar-background: 45 17% 93%;
+    --sidebar-foreground: 47 29% 10%;
+    --sidebar-primary: 210 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 45 10% 85%;
+    --sidebar-accent-foreground: 47 29% 10%;
+    --sidebar-border: 45 10% 78%;
+    --sidebar-ring: 210 100% 50%;
+  }
+
+  .dark {
+    --background: 47 29% 6%;
+    --foreground: 45 17% 91%;
+
+    --card: 47 29% 8%;
+    --card-foreground: 45 17% 91%;
+
+    --popover: 47 29% 8%;
+    --popover-foreground: 45 17% 91%;
+
+    --primary: 210 100% 60%;
+    --primary-foreground: 47 29% 6%;
+
+    --secondary: 47 20% 17%;
+    --secondary-foreground: 45 17% 91%;
+
+    --muted: 47 20% 14%;
+    --muted-foreground: 45 15% 55%;
+
+    --accent: 47 20% 20%;
+    --accent-foreground: 45 17% 91%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 45 17% 91%;
+
+    --border: 47 20% 18%;
+    --input: 47 20% 18%;
+    --ring: 210 100% 60%;
+
+    --canvas-bg: 47 29% 5%;
+    --canvas-dots: 47 20% 15%;
+
+    --panel-bg: 47 29% 7%;
+    --panel-border: 47 20% 15%;
+
+    --sidebar-background: 47 29% 7%;
+    --sidebar-foreground: 45 17% 91%;
+    --sidebar-primary: 210 100% 60%;
+    --sidebar-primary-foreground: 47 29% 6%;
+    --sidebar-accent: 47 20% 17%;
+    --sidebar-accent-foreground: 45 17% 91%;
+    --sidebar-border: 47 20% 15%;
+    --sidebar-ring: 210 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inconsolata', monospace;
+  }
+
+  code, .font-mono {
+    font-family: 'Inconsolata', monospace;
+  }
+}
+
+/* ReactFlow custom styles */
+.react-flow__node {
+  @apply !bg-card !border-border !rounded-lg !shadow-lg;
+}
+
+.react-flow__node.selected {
+  @apply !border-primary !shadow-primary/20;
+}
+
+.react-flow__edge-path {
+  @apply !stroke-muted-foreground;
+}
+
+.react-flow__controls {
+  @apply !bg-card !border-border !rounded-lg !shadow-lg;
+}
+
+.react-flow__controls-button {
+  @apply !bg-card !border-border !fill-foreground hover:!bg-accent;
+}
+
+.react-flow__background pattern circle {
+  @apply !fill-[hsl(var(--canvas-dots))];
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/40;
+}
